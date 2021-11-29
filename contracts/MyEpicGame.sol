@@ -27,7 +27,7 @@ contract MyEpicGame is ERC721 {
     //mapping from token id->nft attributes
     mapping(uint256 => CharacterAttributes) public nftHolderAttributes;
     //mapping from address to token id
-    mapping(uint256 => uint256) public nftHolders;
+    mapping(address => uint256) public nftHolders;
 
     //Pass values into the contract from run.js
     constructor(
@@ -88,7 +88,7 @@ contract MyEpicGame is ERC721 {
                          ' -- NFT #: ',
                          Strings.toString(_tokenId),
                          '", "description": "This is an NFT that lets people play in the game Metaverse Slayer!", "image": "',
-                         charAttributes.imageURI,
+                         charAttributes.vidURI,
                          '", "attributes": [ { "trait_type": "Health Points", "value": ',strHp,', "max_value":',strMaxHp,'}, { "trait_type": "Attack Damage", "value": ',
                          strAttackDamage,'} ]}'
                      )

@@ -23,7 +23,7 @@ const main = async() => {
     txn = await gameContract.mintCharacterNFT(6);
     await txn.wait();
 
-    let returnedTokenUri = await gameContract.returnedTokenUri(1);
+    let returnedTokenUri = await gameContract.tokenURI(1);
     console.log("Token URI: ",returnedTokenUri);
 };
 
